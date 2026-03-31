@@ -5,51 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #ffffff;
-            color: #1a2b3c;
+            color: #1e3044;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
+            -webkit-font-smoothing: antialiased;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #0c2b4b;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            color: #1e3044;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            line-height: 1.2;
         }
 
         p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #b0976d !important; /* Accent gold color used on delapredental.com */
+            color: #c5a059 !important;
             margin-top: 0;
-            margin-bottom: 2rem;
-            font-weight: 400;
+            margin-bottom: 3rem;
+            font-weight: 500;
         }
 
-        /* Container for the widget to match the site's clean aesthetic */
+        /* Subtle shadow and refinement to match the site's clean aesthetic */
         elevenlabs-convai {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(30, 48, 68, 0.1);
+            border-radius: 4px;
+            max-width: 100%;
+        }
+
+        /* Styling for the background or container elements if needed */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: #c5a059;
+            z-index: 10;
         }
 
         @media (max-width: 768px) {
             h2 {
-                font-size: 2rem;
+                font-size: 2.25rem;
+            }
+            p {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                margin-bottom: 2rem;
             }
         }
     </style>
