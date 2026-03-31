@@ -5,79 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-navy: #1e3044;
+            --accent-gold: #c5a059;
+            --bg-white: #ffffff;
+            --text-gray: #54595f;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: #1e3044;
+            background-color: var(--bg-white);
+            color: var(--primary-navy);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Bar Accent */
+        header {
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent-gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            padding: 80px 20px;
             text-align: center;
-            -webkit-font-smoothing: antialiased;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            color: #1e3044;
-            margin-bottom: 0.75rem;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
             font-weight: 400;
             line-height: 1.2;
         }
 
         p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: #c5a059 !important;
+            color: var(--accent-gold);
             margin-top: 0;
-            margin-bottom: 3rem;
-            font-weight: 500;
+            margin-bottom: 3.5rem;
+            font-weight: 600;
         }
 
-        /* Subtle shadow and refinement to match the site's clean aesthetic */
+        /* ElevenLabs Widget Container Styling */
         elevenlabs-convai {
-            box-shadow: 0 30px 60px rgba(30, 48, 68, 0.1);
-            border-radius: 4px;
-            max-width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(30, 48, 68, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: transform 0.3s ease;
         }
 
-        /* Styling for the background or container elements if needed */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background-color: #c5a059;
-            z-index: 10;
+        elevenlabs-convai:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer styling for balance */
+        footer {
+            padding: 40px 0;
+            background-color: var(--primary-navy);
+            color: var(--bg-white);
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
             h2 {
-                font-size: 2.25rem;
+                font-size: 2.5rem;
             }
             p {
-                font-size: 0.75rem;
-                letter-spacing: 2px;
-                margin-bottom: 2rem;
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+                margin-bottom: 2.5rem;
+            }
+            .container {
+                padding: 60px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <h2>Welcome!</h2>
-    <p>Welcome!</p>
+    <header></header>
     
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-    <elevenlabs-convai agent-id="agent_7501k89tdz0jeb5a92fed8ep31cx"></elevenlabs-convai>
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>Your Virtual Concierge</p>
+        
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+        <elevenlabs-convai agent-id="agent_7501k89tdz0jeb5a92fed8ep31cx"></elevenlabs-convai>
+    </div>
+
+    <footer>
+        &copy; DelaPre Dental | Professional Excellence
+    </footer>
 </body>
 </html>
